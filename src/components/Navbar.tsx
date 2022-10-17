@@ -1,14 +1,15 @@
 import StoreIcon from '../images/logo.svg'
+import ThemeSwitcher from './ThemeSwitcher'
 
 type Props = {}
 
 export default function Navbar({}: Props) {
   return (
-    <div className='flex text-stone-700 font-serif'>
+    <div className='flex text-stone-700 font-serif dark:text-stone-50'>
         <div className='flex flex-initial justify-start items-center w-screen'>
             <img src={StoreIcon} 
             alt='store logo'
-            className='logo-sizing'
+            className='logo-sizing dark:invert'
             >
             </img>
             <span className=''
@@ -17,6 +18,7 @@ export default function Navbar({}: Props) {
             </span>
         </div>
         <ul className='flex flex-row gap-3 items-center mr-4'>
+            <ThemeSwitcher />
             <li>Home</li>
             <li>Store</li>
             <li>About</li>
