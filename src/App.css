@@ -2,3 +2,16 @@
   width: 96px;
   height: 96px;
 }
+
+.header-background-image {
+  width: 100%;
+  height: 20em;
+  background: url(./images/BG_1.jpg) no-repeat bottom, url(./images/Shopping1.png) no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  -moz-background-blend-mode: overlay;
+  -webkit-background-blend-mode: overlay;
+  -o-background-blend-mode: overlay;
+  -ms-background-blend-mode: overlay;
+  margin-top: 1em;
+}
