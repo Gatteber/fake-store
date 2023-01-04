@@ -5,7 +5,7 @@ import About from './pages/About';
 import Store from './pages/Store';
 import ViewCart from './pages/ViewCart';
 import { Routes, Route } from 'react-router-dom'; 
-
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
           element={<ViewCart />}
         />  
       </Routes>
-      <h1 className='text-red-500 dark:text-blue-500'>Hello from Tailwind.</h1>
+      <Footer />
     </div>
   );
 }

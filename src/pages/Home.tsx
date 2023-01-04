@@ -12,7 +12,7 @@ export default function Home({}: Props) {
   useEffect(() => {
     fetch('https://fakestoreapi.com/products/?limit=4')
     .then(response => response.json())
-    .then(data => console.log(data[0].title));
+    .then(data => setData(data));
   },[])
 
   return (
