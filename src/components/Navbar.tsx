@@ -1,10 +1,22 @@
 import { Link } from 'react-router-dom';
 import StoreIcon from '../images/logo.svg'
 import ThemeSwitcher from './ThemeSwitcher'
+import { useEffect, useState } from 'react';
 
 type Props = {}
 
 export default function Navbar({}: Props) {
+    const [cart, setCart] = useState<object[]>([])
+    const item: object = {
+        name: "Men's Shirt",
+        price: 15.00,
+        quantity: 1,
+    }
+    const handleCart = useEffect(() => {
+        setCart([...cart, item])
+        setCart([...cart, item])
+        setCart([...cart, item])
+    },[])
   return (
     <div className='flex text-stone-700 font-serif dark:text-stone-50'>
         <div className='flex flex-initial justify-start items-center w-screen'>
@@ -45,7 +57,7 @@ export default function Navbar({}: Props) {
                 <Link
                 to={"/view-cart"}
                 >
-                    Cart(0)
+                    Cart({cart ? cart.length : 0})
                 </Link>
             </li>
         </ul>

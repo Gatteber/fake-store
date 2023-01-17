@@ -6,6 +6,7 @@ import Store from './pages/Store';
 import ViewCart from './pages/ViewCart';
 import { Routes, Route } from 'react-router-dom'; 
 import Footer from './components/Footer';
+import ViewItem from './pages/ViewItem';
 
 function App() {
   return (
@@ -27,6 +28,10 @@ function App() {
         <Route 
           path="/view-cart" 
           element={<ViewCart />}
+        />
+        <Route
+          path="/view-item/:id"
+          element={<ViewItem />}
         />  
       </Routes>
       <Footer />

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Card from "./Card"
 
 type Props = {
@@ -10,13 +11,18 @@ export default function LatestArrivals({ data }: Props) {
     <div className="mt-5 bg-stone-50 dark:bg-stone-700">
         <h2 className="text-center text-stone-700 dark:text-stone-50">Latest Arrivals</h2>
         <div className="flex flex-row gap-5 justify-around">
-          {data.map(obj => 
-          <Card 
-            key={obj.id} 
-            image={obj.image} 
-            price={obj.price} 
-            rating={obj.rating.rate} 
-          />)}
+          {data.map(obj =>
+          <Link
+          to={`/view-item/:${obj.id}`}
+          >
+            <Card 
+              key={obj.id} 
+              image={obj.image} 
+              price={obj.price} 
+              rating={obj.rating.rate}
+            />
+          </Link> 
+          )}
         </div>
     </div>
   )
