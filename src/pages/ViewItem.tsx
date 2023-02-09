@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import AddtoCart from "../components/AddtoCart";
-type Props = {}
 
-export default function ViewItem({}: Props) {
+type Props = {
+  cartItems: any,
+  setCartItems: any,
+}
+
+export default function ViewItem({cartItems, setCartItems}: Props) {
   const [data, setData] = useState<any>({});
   const { id, } = useParams()
   const getRealId = id?.slice(1);
+  const [quantity, setQuantity] = useState<number>(1);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${getRealId}`)
@@ -39,7 +44,14 @@ export default function ViewItem({}: Props) {
           {data.description}
         </p>
         <div className="cart">
-          <AddtoCart />
+          <AddtoCart 
+            quantity={quantity} 
+            setQuantity={setQuantity} 
+            cartItems={cartItems} 
+            setCartItems={setCartItems}
+            name={data && data.title}
+            price={data && data.price} 
+            />
         </div>
         <div>
           -- Category: { data.category && data.category.toUpperCase()} --

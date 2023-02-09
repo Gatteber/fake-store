@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import HeaderImage from "../components/HeaderImage"
 import LatestArrivals from '../components/LatestArrivals';

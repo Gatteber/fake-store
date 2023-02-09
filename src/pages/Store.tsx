@@ -15,10 +15,10 @@ export default function Store({}: Props) {
   },[])
   return (
     <div className='bg-stone-50 dark:bg-stone-700'>
-              <div className="w-screen grid grid-cols-2 gap-4 items-center">
+              <div className="w-screen grid grid-cols-2 gap-4 justify-items-center">
           {data && data.map((obj: any) =>
           <Link
-          to={`/view-item/:${obj.id}`}
+            to={`/view-item/:${obj.id}`}
           >
             <Card 
               key={obj.id} 

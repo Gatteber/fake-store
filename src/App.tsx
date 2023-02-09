@@ -7,11 +7,30 @@ import ViewCart from './pages/ViewCart';
 import { Routes, Route } from 'react-router-dom'; 
 import Footer from './components/Footer';
 import ViewItem from './pages/ViewItem';
+import { useState } from 'react';
+
+interface cartDetails {
+  name: string,
+  price: string,
+  quantity: number,
+}
 
 function App() {
+  const [cartItems, setCartItems] = useState<Array<cartDetails>>([
+    {
+      name: "hello",
+      price: "24.99",
+      quantity: 1,
+    },
+    {
+      name: "goodbye",
+      price: "24.99",
+      quantity: 2,
+    },
+  ])
   return (
     <div className="h-screen bg-stone-50 dark:bg-stone-700 transition duration-250">
-      <Navbar />
+      <Navbar cartItems={cartItems} />
       <Routes>
         <Route 
           path="/" 
@@ -27,11 +46,11 @@ function App() {
         />  
         <Route 
           path="/view-cart" 
-          element={<ViewCart />}
+          element={<ViewCart cartItems={cartItems} setCartItems={setCartItems} />}
         />
         <Route
           path="/view-item/:id"
-          element={<ViewItem />}
+          element={<ViewItem cartItems={cartItems} setCartItems={setCartItems} />}
         />  
       </Routes>
       <Footer />
