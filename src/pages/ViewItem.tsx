@@ -50,7 +50,9 @@ export default function ViewItem({cartItems, setCartItems}: Props) {
             cartItems={cartItems} 
             setCartItems={setCartItems}
             name={data && data.title}
-            price={data && data.price} 
+            price={data && data.price}
+            imageID={data && data.id}
+            image={data && data.image} 
             />
         </div>
         <div>

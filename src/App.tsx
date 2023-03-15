@@ -13,20 +13,21 @@ interface cartDetails {
   name: string,
   price: string,
   quantity: number,
+  imageID: any,
 }
 
 function App() {
   const [cartItems, setCartItems] = useState<Array<cartDetails>>([
-    {
-      name: "hello",
-      price: "24.99",
-      quantity: 1,
-    },
-    {
-      name: "goodbye",
-      price: "24.99",
-      quantity: 2,
-    },
+    // {
+    //   name: "hello",
+    //   price: "24.99",
+    //   quantity: 1,
+    // },
+    // {
+    //   name: "goodbye",
+    //   price: "24.99",
+    //   quantity: 2,
+    // },
   ])
   return (
     <div className="h-screen bg-stone-50 dark:bg-stone-700 transition duration-250">

@@ -8,9 +8,11 @@ type Props = {
   setCartItems: any,
   name: any,
   price:any,
+  imageID: any,
+  image: any,
 }
 
-export default function AddtoCart({ quantity, setQuantity, cartItems, setCartItems, name, price }: Props) {
+export default function AddtoCart({ quantity, setQuantity, cartItems, setCartItems, name, price, imageID, image }: Props) {
   let navigate = useNavigate();
   const handleDecrement = (quantity: number) => {
     if (quantity <= 1)
@@ -25,6 +27,8 @@ export default function AddtoCart({ quantity, setQuantity, cartItems, setCartIte
       name: name,
       price: price,
       quantity: quantity,
+      imageID: imageID,
+      image: image,
     }
     setCartItems([...cartItems, newCartItem])
     navigate('/view-cart');
